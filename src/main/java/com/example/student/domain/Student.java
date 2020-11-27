@@ -30,7 +30,7 @@ public class Student {
   @Column(name = "class")
   private String classNum;
   
-  @Column(name = "roll_no")
+  @Column(name = "roll_no", unique = true)
   private int roll_no;
 
 
