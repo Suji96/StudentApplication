@@ -16,10 +16,10 @@ public class Student {
   private String id;
 
   @Column(name = "stud_name")
-  private String studName;
+  private String name;
 
   @Column(name = "date_of_birth")
-  private Date dateOfBirth;
+  private Date date_of_birth;
 
   @Column(name = "gender")
   private String gender;
@@ -28,9 +28,9 @@ public class Student {
   private String division;
 
   @Column(name = "class")
-  private String std;
+  private String classNum;
   
-  @Column(name = "roll_no")
+  @Column(name = "roll_no", unique = true)
   private int roll_no;
 
 
@@ -42,20 +42,20 @@ public class Student {
     this.id = id;
   }
 
-  public String getStudName() {
-    return studName;
+  public String getName() {
+    return name;
   }
 
-  public void setStudName(String studName) {
-    this.studName = studName;
+  public void setName(String name) {
+    this.name = name;
   }
 
-  public Date getDateOfBirth() {
-    return dateOfBirth;
+  public Date getDate_of_birth() {
+    return date_of_birth;
   }
 
-  public void setDateOfBirth(Date dateOfBirth) {
-    this.dateOfBirth = dateOfBirth;
+  public void setDate_of_birth(Date date_of_birth) {
+    this.date_of_birth = date_of_birth;
   }
 
   public String getGender() {
@@ -74,12 +74,12 @@ public class Student {
     this.division = division;
   }
 
-  public String getStd() {
-    return std;
+  public String getClassNum() {
+    return classNum;
   }
 
-  public void setStd(String std) {
-    this.std = std;
+  public void setClassNum(String classNum) {
+    this.classNum = classNum;
   }
 
   public int getRoll_no() {
