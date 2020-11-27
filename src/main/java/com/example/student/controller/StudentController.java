@@ -2,6 +2,7 @@ package com.example.student.controller;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -12,6 +13,7 @@ import com.example.student.domain.Student;
 import com.example.student.service.StudentService;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping(value = "/api")
 public class StudentController {
 
@@ -20,6 +22,7 @@ public class StudentController {
 
   @PostMapping("/create/employee")
   public Student createEmployee(@RequestBody Student student) {
+    System.out.println(student.getName());
     return this.studService.saveStudent(student);
   }
 
