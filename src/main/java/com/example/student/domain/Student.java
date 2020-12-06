@@ -15,7 +15,7 @@ public class Student {
   @Column(name = "id")
   private String id;
 
-  @Column(name = "stud_name")
+  @Column(name = "name")
   private String name;
 
   @Column(name = "date_of_birth")

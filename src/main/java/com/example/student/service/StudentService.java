@@ -1,10 +1,11 @@
 package com.example.student.service;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.domain.Sort.Direction;
-import org.springframework.data.domain.Sort.Order;
 import org.springframework.stereotype.Service;
 import com.example.student.domain.Student;
 import com.example.student.repository.StudentRepository;
@@ -28,9 +29,14 @@ public class StudentService {
   }
 
   public List<Student> getAllStudentOrderByName() {
-    Order order = new Sort.Order(Direction.ASC, "studName");
-    Sort sort = Sort.by(order);
-    return this.studRep.findAll(sort);
+    List<Student> list = this.studRep.findAll();
+    if (list.size() != 0) {
+      List<Student> sort =
+          list.stream().sorted(Comparator.comparing(Student::getName)).collect(Collectors.toList());
+      return sort;
+    } else {
+      return new ArrayList<Student>();
+    }
   }
 
 }

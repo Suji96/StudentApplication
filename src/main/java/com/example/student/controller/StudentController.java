@@ -40,7 +40,9 @@ public class StudentController {
   }
 
   @GetMapping("/dropdown/retrieve/order/name/student")
-  public List<Student> getAllStudetOrderByName() {
-    return studService.getAllStudentOrderByName();
+  public List<Student> getAllStudetOrderByName() { 
+    List<Student> studList = studService.getAllStudentOrderByName();
+    System.out.println("Order By Name" +  studList.get(0).getName());
+    return studList;
   }
 }
